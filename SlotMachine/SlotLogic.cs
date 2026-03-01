@@ -139,15 +139,4 @@ public static class SlotLogic
         return (total, winners);
     }
 
-    public static string GetSymbolDisplay(Symbol s) => s switch
-    {
-        Symbol.Cherry => Constants.DISPLAY_CHERRY,
-        Symbol.Lemon => Constants.DISPLAY_LEMON,
-        Symbol.Orange => Constants.DISPLAY_ORANGE,
-        Symbol.Plum => Constants.DISPLAY_PLUM,
-        Symbol.Bell => Constants.DISPLAY_BELL,
-        Symbol.Bar => Constants.DISPLAY_BAR,
-        Symbol.Seven => Constants.DISPLAY_SEVEN,
-        _ => Constants.DISPLAY_UNKNOWN
-    };
 }

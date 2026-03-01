@@ -76,7 +76,7 @@ public static class SlotUI
             Console.Write("  |");
             for (int c = 0; c < Constants.GRID_COLS; c++)
             {
-                string symbol = SlotLogic.GetSymbolDisplay(grid[r, c]);
+                string symbol = GetSymbolDisplay(grid[r, c]);
                 Console.Write($" {symbol} |");
             }
             Console.WriteLine();
@@ -85,6 +85,18 @@ public static class SlotUI
         }
         Console.WriteLine("  +------+------+------+");
     }
+
+    private static string GetSymbolDisplay(Symbol s) => s switch
+    {
+        Symbol.Cherry => Constants.DISPLAY_CHERRY,
+        Symbol.Lemon => Constants.DISPLAY_LEMON,
+        Symbol.Orange => Constants.DISPLAY_ORANGE,
+        Symbol.Plum => Constants.DISPLAY_PLUM,
+        Symbol.Bell => Constants.DISPLAY_BELL,
+        Symbol.Bar => Constants.DISPLAY_BAR,
+        Symbol.Seven => Constants.DISPLAY_SEVEN,
+        _ => Constants.DISPLAY_UNKNOWN
+    };
 
     public static void DisplayResult(int cost, int winnings, List<string> winningLines, int newBalance)
     {
